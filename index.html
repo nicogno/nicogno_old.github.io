@@ -1,25 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Portfolio</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <title>CV - Your Name</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #1E90FF;
+            color: white;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 32px;
+            margin: 0;
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style-type: none;
+            margin-bottom: 5px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .toggle-button {
+            background-color: #1E90FF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .toggle-content {
+            display: none;
+            margin-top: 20px;
+        }
+        .toggle-content.show {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-  <h1>My Portfolio</h1>
-  <h2>About Me</h2>
-  <p>
-    Hi, my name is Nicolò Cogno and I am a PhD candidate in Radiation BioPhysics.
-  </p>
-  <h2>My Work</h2>
-  <h3>Project 1</h3>
-  <p>
-    [Description of Project 1]
-  </p>
-  <h3>Project 2</h3>
-  <p>
-    [Description of Project 2]
-  </p>
+    <header>
+        <div class="container">
+            <h1>CV - Nicolò Cogno</h1>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Education</h2>
+        <p>Degree, Major, Institution, Year</p>
+        <h2>Experience</h2>
+        <ul>
+            <li>
+                <p>Job Title, Company, Dates</p>
+                <ul>
+                    <li>Responsibility 1</li>
+                    <li>Responsibility 2</li>
+                    <li>Responsibility 3</li>
+                </ul>
+            </li>
+        </ul>
+        <button class="toggle-button" id="skills-toggle-button">Show Skills</button>
+        <div class="toggle-content" id="skills-toggle-content">
+            <h2>Skills</h2>
+            <ul>
+                <li>Skill 1</li>
+                <li>Skill 2</li>
+                <li>Skill 3</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var skillsToggleButton = document.getElementById("skills-toggle-button");
+        var skillsToggleContent = document.getElementById("skills-toggle-content");
+
+        skillsToggleButton.addEventListener("click", function() {
+            if (skillsToggleContent.classList.contains("show")) {
+                skillsToggleContent.classList.remove("show");
+                skillsToggleButton.innerHTML = "Show Skills";
+            } else {
+                skillsToggleContent.classList.add("show");
+                skillsToggleButton.innerHTML = "Hide Skills";
+            }
+        });
+    </script>
 </body>
 </html>
-
-
